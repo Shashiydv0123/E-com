@@ -1,55 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mainProductImage = document.getElementById('mainProductImage');
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    const addToCartBtn = document.getElementById('addToCartBtn');
-    const productTitle = document.getElementById('productTitle');
-    const productPrice = document.getElementById('productPrice');
-    const quantitySelect = document.getElementById('quantity-select');
+    const mainProductImage = document.querySelector('.main-product-image');
+    const colorCircles = document.querySelectorAll('.color-circle');
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
 
-    // Image Gallery Functionality
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-            // Remove 'active' class from all thumbnails
-            thumbnails.forEach(t => t.classList.remove('active'));
-            
-            // Add 'active' class to the clicked thumbnail
-            thumbnail.classList.add('active');
-            
-            // Change the main product image
-            mainProductImage.src = thumbnail.src;
-            mainProductImage.alt = thumbnail.alt;
+    // Simple Color Selection (Visually, not functionally changing image yet)
+    colorCircles.forEach(circle => {
+        circle.addEventListener('click', () => {
+            // Remove 'active' from all circles
+            colorCircles.forEach(c => c.classList.remove('active'));
+            // Add 'active' to the clicked circle
+            circle.classList.add('active');
+
+            // In a real app, you might change the main product image
+            // based on the selected color here.
+            // Example: mainProductImage.src = `images/product-main-${circle.dataset.color}.jpg`;
         });
     });
 
-    // Add to Cart Functionality
+    // Add to Cart Button Click
     addToCartBtn.addEventListener('click', () => {
-        const title = productTitle.textContent;
-        const price = parseFloat(productPrice.textContent.replace('$', ''));
-        const quantity = parseInt(quantitySelect.value);
-        const selectedColor = document.getElementById('color-select').value;
+        const productName = document.querySelector('.product-name').textContent;
+        const selectedColor = document.querySelector('.color-circle.active').style.backgroundColor; // Just an example, would use data-attributes in real app
 
-        if (quantity < 1) {
-            alert('Please select a quantity of at least 1.');
-            return;
-        }
+        alert(`"${productName}" (Color: ${selectedColor}) added to cart!`);
 
-        const item = {
-            name: title,
-            price: price,
-            quantity: quantity,
-            color: selectedColor
-        };
-
-        // In a real application, you'd send this 'item' object to a backend
-        // or store it in local storage/session storage for a shopping cart.
-        console.log('Item added to cart:', item);
-        alert(`${quantity} x ${title} (${selectedColor}) added to cart!`);
-
-        // You might want to provide more sophisticated feedback, 
-        // like updating a cart icon or showing a mini-cart.
+        // In a real application, you'd send this data to a backend,
+        // update a cart state, show a confirmation modal, etc.
+        console.log(`Added to cart: ${productName}, Color: ${selectedColor}`);
     });
 
-    // You can also add more dynamic content loading here if needed,
-    // for example, fetching product data from an API.
-    // For now, product details are static in HTML.
+    // You can add more dynamic content loading,
+    // image gallery functionality (if multiple images were present), etc.
 });
