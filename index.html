@@ -3,77 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Product Page - Minimal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">MyStore</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="product-container">
-        <section class="product-images">
-            <div class="main-image">
-                <img id="mainProductImage" src="images/product1.jpg" alt="Product Image 1">
+    <div class="container">
+        <header class="header">
+            <div class="logo">PRODUCT</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Q PRODUCT">
+                <button aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
             </div>
-            <div class="thumbnail-gallery">
-                <img class="thumbnail active" src="images/product1.jpg" alt="Thumbnail 1">
-                <img class="thumbnail" src="images/product2.jpg" alt="Thumbnail 2">
-                <img class="thumbnail" src="images/product3.jpg" alt="Thumbnail 3">
-            </div>
-        </section>
+        </header>
 
-        <section class="product-details">
-            <h1 id="productTitle">Stylish Smartwatch</h1>
-            <p class="product-price" id="productPrice">$199.99</p>
-            <p class="product-description" id="productDescription">
-                Stay connected and track your fitness with our sleek and versatile smartwatch. 
-                Featuring a vibrant display, long-lasting battery, and advanced health monitoring capabilities.
-            </p>
-
-            <div class="product-options">
-                <div class="option-group">
-                    <label for="color-select">Color:</label>
-                    <select id="color-select">
-                        <option value="black">Black</option>
-                        <option value="silver">Silver</option>
-                        <option value="rose-gold">Rose Gold</option>
-                    </select>
+        <main class="product-page">
+            <section class="product-info-left">
+                <h1 class="product-name">Product Name</h1>
+                <p class="product-description">
+                    Wis the dedluct plair ame and surprereonice upprecdiating oraokes you prious.
+                </p>
+                <div class="product-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="reviews">12,073/3eip</span>
                 </div>
-                <div class="option-group">
-                    <label for="quantity-select">Quantity:</label>
-                    <input type="number" id="quantity-select" value="1" min="1">
+                <p class="customers-text">Customers</p>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </section>
+
+            <section class="product-image-section">
+                <img src="pp.jpg" alt="Product Main Image" class="main-product-image">
+            </section>
+
+            <section class="product-details-right">
+                <h2 class="section-title">Product information</h2>
+                <ul class="info-list">
+                    <li><span>Size</span> <span>4.5</span></li>
+                    <li><span>Color</span> <span>2.0</span></li>
+                    <li><span>Material</span> <span>2.5</span></li>
+                </ul>
+                <h3 class="material-title">Material</h3>
+                <div class="color-options">
+                    <div class="color-circle active" style="background-color: #333;"></div>
+                    <div class="color-circle" style="background-color: #777;"></div>
+                    <div class="color-circle" style="background-color: #ccc;"></div>
+                    <div class="color-circle" style="background-color: #eee;"></div>
                 </div>
-            </div>
+            </section>
+        </main>
+    </div>
 
-            <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
-
-            <div class="product-reviews">
-                <h2>Customer Reviews</h2>
-                <div class="review">
-                    <p><strong>John D.</strong> - ⭐⭐⭐⭐⭐</p>
-                    <p> "Absolutely love this smartwatch! It's stylish and the features are great."</p>
-                </div>
-                <div class="review">
-                    <p><strong>Jane S.</strong> - ⭐⭐⭐⭐</p>
-                    <p> "Good watch, battery life could be better but overall satisfied."</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 MyStore. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
